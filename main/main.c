@@ -164,7 +164,7 @@ void app_main(void)
     nvs_flash_init();
     init_http();
 
-    /*struct timeval now;
+    struct timeval now;
     gettimeofday(&now, NULL);
     int sleep_time_ms = (now.tv_sec - sleep_enter_time.tv_sec) * 1000 + (now.tv_usec - sleep_enter_time.tv_usec) / 1000;
 
@@ -215,21 +215,17 @@ void app_main(void)
                 printf("Not a deep sleep reset\n");
         }
     
-    */
-   while (1)
-   {
     temp();
 
     hum();
 
 
     vTaskDelay(1000 / portTICK_PERIOD_MS);
-   }
    
     
    
    
-    /*const int wakeup_time_sec = 10;
+    const int wakeup_time_sec = 10;
     printf("Enabling timer wakeup, %ds\n", wakeup_time_sec);
     esp_sleep_enable_timer_wakeup(wakeup_time_sec * 1000000);
 
@@ -278,7 +274,6 @@ void app_main(void)
         gettimeofday(&sleep_enter_time, NULL);
 
         esp_deep_sleep_start();
-    */
 }
 
 void initialize_oled(void)
