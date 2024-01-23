@@ -1,0 +1,7 @@
+menu "SBC"
+    config EXAMPLE_HTTP_ENDPOINT
+        string "SBC"
+        default "demo.thingsboard.io"
+        help
+            Target endpoint host-name for the example to use.
+endmenu
